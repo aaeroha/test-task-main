@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  // "esm": true,
+  // "experimentalResolver": true,
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "declarationMap": false,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "module": "ES2020",
+    "target": "ES2020",
+    "alwaysStrict": false,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES5",
+      "ES6",
+      "ES2020",
+      "ES2020.BigInt",
+      "ES2020.Promise",
+      "ES2020.String",
+      "ES2020.Symbol.WellKnown",
+      "dom"
+    ],
+    // "types": [
+    //   "node"
+    // ],
+    "moduleResolution": "node",
+    // "allowImportingTsExtensions": true,
+    // "noEmit": true,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "inlineSources": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "outDir": "bin",
+    "rootDir": "."
+  },
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "test/**/*.spec.ts"
+  ]
+}

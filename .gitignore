@@ -1,0 +1,6 @@
+.idea
+node_modules
+public
+.yarn-error.log
+
+client/builder/report.html
