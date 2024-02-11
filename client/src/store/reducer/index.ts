@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import AuctionSlice from "./auction.slice";
+import { configureStore } from '@reduxjs/toolkit';
+import AuctionSlice from './auction.slice';
 
 const store = configureStore({
   reducer: {

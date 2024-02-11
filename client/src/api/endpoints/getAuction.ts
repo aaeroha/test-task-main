@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 // @ts-ignore
-const API_BASEPATH = process.env.CONFIG.API_BASEPATH || "alt-url";
+const API_BASEPATH = process.env.CONFIG.API_BASEPATH || 'alt-url';
 
 export const lotsById = async (id: string) => {
   const response = await axios
@@ -8,6 +8,6 @@ export const lotsById = async (id: string) => {
     .then((res) => {
       return res.data;
     })
-    .catch((error) => console.error("Error fetching:", error));
+    .catch((error) => console.error('Error fetching:', error));
   return response?.auction ? response : null;
 };

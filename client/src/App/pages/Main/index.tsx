@@ -1,15 +1,15 @@
-import debounce from "lodash.debounce";
-import { Box, Container, Divider } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import debounce from 'lodash.debounce';
+import { Box, Container, Divider } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
 
-import { useDispatch, useSelector } from "../../../store";
-import { usePageVisibility } from "../../hooks/usePageVisibility";
+import { useDispatch, useSelector } from '../../../store';
+import { usePageVisibility } from '../../hooks/usePageVisibility';
 
-import { getLots } from "../../../store/reducer/thunk/lots";
+import { getLots } from '../../../store/reducer/thunk/lots';
 
-import { SearchInput } from "../../components/SearchInput";
-import { AuctionList } from "../../components/AuctionList";
-import { Loader } from "../../components/Loader";
+import { SearchInput } from '../../components/SearchInput';
+import { AuctionList } from '../../components/AuctionList';
+import { Loader } from '../../components/Loader';
 
 // @ts-ignore
 const POLLING_INTERVAL = process.env.CONFIG.POLLING_INTERVAL || 20;
@@ -19,9 +19,9 @@ type SearhInput = {
 };
 
 export const Main = () => {
-  const [searchInput, setSearchInput] = useState<SearhInput>({ search: "" });
+  const [searchInput, setSearchInput] = useState<SearhInput>({ search: '' });
   const isPageVisible = usePageVisibility();
-  let timerIdRef = useRef<any>(null); // !
+  let timerIdRef = useRef<NodeJS.Timer | null>(null);
   const dispatch = useDispatch();
   const allLotsData = useSelector((state) => state.auctionSlice.auctions.data);
   const isLoading = useSelector(
@@ -44,7 +44,10 @@ export const Main = () => {
   };
 
   const stopPolling = () => {
-    clearInterval(timerIdRef.current);
+    if (timerIdRef.current) {
+      clearTimeout(timerIdRef.current);
+      timerIdRef.current = null;
+    }
   };
 
   useEffect(() => {

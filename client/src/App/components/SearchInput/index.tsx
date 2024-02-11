@@ -1,13 +1,13 @@
-import { FC } from "react";
-import { TextField } from "@mui/material";
-import { useState } from "react";
+import { FC } from 'react';
+import { TextField } from '@mui/material';
+import { useState } from 'react';
 
 type SearchInputProps = {
   debouncedHandler: (e: string) => void;
 };
 
 export const SearchInput: FC<SearchInputProps> = ({ debouncedHandler }) => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
 
   const handleChange = (e) => {
     setValue(e.target.value);

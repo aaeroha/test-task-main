@@ -1,14 +1,14 @@
-import { FC, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Typography, CardMedia, CardContent, Card } from "@mui/material";
-import { AuctionItem } from "../../../../types/index";
+import { FC, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Typography, CardMedia, CardContent, Card } from '@mui/material';
+import { AuctionItem } from '../../../../types/index';
 // @ts-ignore
-const IMAGES_BASEPATH = process.env.CONFIG.IMAGES_BASEPATH || "alt-path";
+const IMAGES_BASEPATH = process.env.CONFIG.IMAGES_BASEPATH || 'alt-path';
 
 type ListItemProps = { lot: AuctionItem };
 
-function pad(num:number) {
-  return num.toString().padStart(2, "0");
+function pad(num: number) {
+  return num.toString().padStart(2, '0');
 }
 
 function formatTime(time: number) {
@@ -45,19 +45,19 @@ export const ListItem: FC<ListItemProps> = ({ lot }) => {
         mb: 2,
         minWidth: 345,
         minHeight: 345,
-        position: "relative",
+        position: 'relative',
       }}
     >
       <Link
         to={`/${lot.id}`}
-        style={{ textDecoration: "none", color: "black" }}
+        style={{ textDecoration: 'none', color: 'black' }}
       >
         <CardContent
           sx={{
-            backgroundColor: "#dfdfdf",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            backgroundColor: '#dfdfdf',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
           <Typography gutterBottom variant="h6" component="h6">
@@ -67,7 +67,7 @@ export const ListItem: FC<ListItemProps> = ({ lot }) => {
             variant="body1"
             color="text.secondary"
             sx={{
-              fontWeight: "bold",
+              fontWeight: 'bold',
             }}
           >
             {formatTime(timeLeft)}
@@ -78,20 +78,20 @@ export const ListItem: FC<ListItemProps> = ({ lot }) => {
           height="140"
           image={`${IMAGES_BASEPATH}${lot.imgUrl}`}
           alt={lot.title}
-          sx={{ position: "absolute", height: "80%" }}
+          sx={{ position: 'absolute', height: '80%' }}
         />
         <Typography
           variant="h6"
           color="text.secondary"
           component="p"
           sx={{
-            position: "absolute",
-            bottom: "0",
-            right: "0",
-            backgroundColor: "#afafaf",
-            padding: "5px 15px",
-            color: "white",
-            borderTopLeftRadius: "5px",
+            position: 'absolute',
+            bottom: '0',
+            right: '0',
+            backgroundColor: '#afafaf',
+            padding: '5px 15px',
+            color: 'white',
+            borderTopLeftRadius: '5px',
           }}
         >
           Ставка: {lot.bid} р

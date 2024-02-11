@@ -1,7 +1,7 @@
 // export default auctions;
-import { createSlice } from "@reduxjs/toolkit";
-import { getLots, getLotById } from "./thunk/lots";
-import { State } from "../../types/index";
+import { createSlice } from '@reduxjs/toolkit';
+import { getLots, getLotById } from './thunk/lots';
+import { State } from '../../types/index';
 
 const initialState: State = {
   auctions: { data: [], isLoading: false, isInit: true },
@@ -9,7 +9,7 @@ const initialState: State = {
 };
 
 const auctionSlice = createSlice({
-  name: "auctionSlice",
+  name: 'auctionSlice',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

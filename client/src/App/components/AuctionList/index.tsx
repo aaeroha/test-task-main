@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Box } from "@mui/material";
-import { ListItem } from "./ListItem";
-import { AuctionItem } from "../../../types/index";
+import { FC } from 'react';
+import { Box } from '@mui/material';
+import { ListItem } from './ListItem';
+import { AuctionItem } from '../../../types/index';
 
 type AuctionListProps = {
   data: AuctionItem[];
@@ -13,9 +13,9 @@ export const AuctionList: FC<AuctionListProps> = ({ data }) => {
       sx={{
         mt: 3,
         mb: 2,
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-evenly",
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
       }}
     >
       {data ? (

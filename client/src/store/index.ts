@@ -2,9 +2,9 @@ import {
   type TypedUseSelectorHook,
   useSelector as useUntypedSelector,
   useDispatch as useUntypedDispatch,
-} from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import auctionSlice from "./reducer/auction.slice";
+} from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import auctionSlice from './reducer/auction.slice';
 
 const store = configureStore({
   reducer: {

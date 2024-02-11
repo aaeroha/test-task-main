@@ -1,5 +1,5 @@
-import { Box, Container, Divider, Typography } from "@mui/material";
-import { Outlet } from "react-router-dom";
+import { Box, Container, Divider, Typography } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 
 export const Header = () => {
   return (

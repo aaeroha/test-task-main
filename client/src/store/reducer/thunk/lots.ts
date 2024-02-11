@@ -1,10 +1,10 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import api from "../../../api/index";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import api from '../../../api/index';
 
 type SearhInput = { search: string };
 
 export const getLots = createAsyncThunk(
-  "getLots",
+  'getLots',
   async (params: SearhInput) => {
     try {
       const result = await api.allLots(params);
@@ -15,7 +15,7 @@ export const getLots = createAsyncThunk(
   }
 );
 
-export const getLotById = createAsyncThunk("getLotById", async (id: string) => {
+export const getLotById = createAsyncThunk('getLotById', async (id: string) => {
   try {
     const result = await api.lotsById(id);
     return result;
